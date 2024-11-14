@@ -7,7 +7,7 @@ class Shimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: double.infinity,
       child: Lottie.asset("assets/animations/shimmer.json", fit: BoxFit.cover),

@@ -40,7 +40,7 @@ class ArticleCard extends StatelessWidget {
               padding: const EdgeInsets.only(
                   top: 30, bottom: 5, right: 15, left: 15),
               child: SectionTitle(
-                title: "Health Tips",
+                title: "Tahsin Tips",
                 pressOnSeeAll: () {},
               ),
             ),

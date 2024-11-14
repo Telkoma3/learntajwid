@@ -42,7 +42,7 @@ dependencies:
   get: ^4.6.6
 
   #Firebase back-end pacakges-
-  firebase_core: ^2.27.0
+  firebase_core: ^2.32.0
   firebase_auth: ^4.17.8
   firebase_storage: ^11.6.9
   cloud_firestore: ^4.15.8
@@ -50,6 +50,7 @@ dependencies:
   fluttertoast: ^8.2.8
   lottie: ^3.1.2
   url_launcher: ^6.0.20
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

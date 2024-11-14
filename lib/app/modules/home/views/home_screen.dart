@@ -15,19 +15,19 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomAppBar(),
+              const CustomAppBar(),
 
               ///Suggest Doctor...
-              BannerCard(),
+              const BannerCard(),
 
               ///Category...
-              Categories(),
+              const Categories(),
 
               ///Available Doctor...
               AvailableDoctors(),
 
               ///Heath Article and Tips...
-              ArticleCard()
+              const ArticleCard()
             ],
           ),
         ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-const primaryColor = Color(0xFF255ED6);
-const secondaryColor = Color(0xFF6C9ED8);
+const primaryColor = Color(0xFFFAA500);
+const secondaryColor = Color(0xFFFFCC80);
 const textColor = Color(0xFF35364F);
-const backgroundColor = Color(0xFFE6EFF9);
-const redColor = Color(0xFFE85050);
+const backgroundColor = Color(0xFFF1F8E9);
+const redColor = Color(0xFFF57F17);
 
 const defaultPadding = 16.0;
 

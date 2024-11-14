@@ -22,7 +22,7 @@ class AvailableDoctors extends StatelessWidget {
           padding:
               const EdgeInsets.only(top: 30, bottom: 5, right: 15, left: 15),
           child: SectionTitle(
-            title: "Available Doctor",
+            title: "Available Ustadz",
             pressOnSeeAll: () {
               Get.to(() => DoctorsScreen());
             },
@@ -36,7 +36,7 @@ class AvailableDoctors extends StatelessWidget {
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return const Center(child: Text('No doctors found'));
+              return const Center(child: Text('No Ustadz found'));
             } else {
               return SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

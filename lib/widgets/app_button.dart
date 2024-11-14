@@ -10,7 +10,7 @@ class AppButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: ontap,
       style: TextButton.styleFrom(
-        backgroundColor: const Color(0xFF6C9ED8),
+        backgroundColor: const Color(0xFFF9A825),
       ),
       child: Text(text ?? ''),
     );

@@ -5,9 +5,9 @@ import '../utils/constants.dart';
 
 class Rating extends StatelessWidget {
   const Rating({
-    Key? key,
+    super.key,
     required this.score,
-  }) : super(key: key);
+  });
   final int score;
 
   @override

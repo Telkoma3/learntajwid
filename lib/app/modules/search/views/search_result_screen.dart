@@ -20,7 +20,7 @@ class SearchResultScreen extends StatelessWidget {
               "Selected area",
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            Text("Boston"),
+            const Text("Boston"),
           ],
         ),
         actions: [
@@ -35,7 +35,7 @@ class SearchResultScreen extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+                padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
                 child: Column(
                   children: [
                     SectionTitle(

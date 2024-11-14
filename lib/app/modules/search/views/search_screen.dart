@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Search Here"),
+        title: const Text("Search Here"),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -33,8 +33,8 @@ class SearchScreen extends StatelessWidget {
                     .titleLarge!
                     .copyWith(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: defaultPadding),
-              SearchForm(),
+              const SizedBox(height: defaultPadding),
+              const SearchForm(),
             ],
           ),
         ),

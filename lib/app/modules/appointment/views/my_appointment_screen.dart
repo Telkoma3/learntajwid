@@ -12,16 +12,16 @@ class MyAppointmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Appointment"),
+        title: const Text("My Appointment"),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(defaultPadding),
+          padding: const EdgeInsets.all(defaultPadding),
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(defaultPadding),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(defaultPadding),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius:
                       BorderRadius.all(Radius.circular(defaultPadding / 2)),
@@ -43,7 +43,7 @@ class MyAppointmentScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Divider(height: defaultPadding * 2),
+                    const Divider(height: defaultPadding * 2),
                     Row(
                       children: [
                         Expanded(
@@ -60,7 +60,7 @@ class MyAppointmentScreen extends StatelessWidget {
                             onPressed: () {},
                             style:
                                 TextButton.styleFrom(backgroundColor: redColor),
-                            child: Text("Cancel"),
+                            child: const Text("Cancel"),
                           ),
                         ),
                       ],
@@ -89,7 +89,7 @@ class MyAppointmentScreen extends StatelessWidget {
         Text(
           text,
           maxLines: 1,
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: const TextStyle(fontWeight: FontWeight.w600),
         ),
       ],
     );

@@ -31,7 +31,7 @@ class RecommendDoctorCard extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Find the Specialist Doctor That Suits You",
+                  const Text("Find the Ustadz Can Teach you ",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                       style: TextStyle(
