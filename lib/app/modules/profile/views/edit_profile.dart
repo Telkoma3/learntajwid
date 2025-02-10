@@ -20,10 +20,10 @@ class EditProfile extends StatelessWidget {
           children: [
             const CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage('assets/images/profile.jpg')),
+                backgroundImage: AssetImage('assets/logo/logo.png')),
             const SizedBox(height: defaultPadding),
             const ProfileTextField(
-                initialValue: "Al Azad",
+                initialValue: "Miswan",
                 fieldName: 'Name*',
                 suffixIcon: Icons.person_outline),
             const ProfileTextField(
@@ -36,7 +36,7 @@ class EditProfile extends StatelessWidget {
                 fieldName: 'Mobile*',
                 suffixIcon: Icons.phone),
             const ProfileTextField(
-                initialValue: "Thakurgaon, Bangladesh",
+                initialValue: "Sumenep, Madura",
                 fieldName: 'Address*',
                 suffixIcon: Icons.location_on_outlined),
             const SizedBox(height: 20),

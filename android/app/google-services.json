@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "571877333718",
-    "project_id": "arroggo-talk",
-    "storage_bucket": "arroggo-talk.appspot.com"
+    "project_number": "190795040487",
+    "project_id": "learntajwiid",
+    "storage_bucket": "learntajwiid.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:571877333718:android:79307126d55cd6c8c64777",
+        "mobilesdk_app_id": "1:190795040487:android:0a8ed375ac168b80368442",
         "android_client_info": {
-          "package_name": "com.example.doctor_appointment"
+          "package_name": "com.learn.app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBVy61dB_P7Rf7T8ZfWaGltZZ_kxqoHKt8"
+          "current_key": "AIzaSyDrbIugGMbHCAye1w9_8uNAvQAaijqTIpY"
         }
       ],
       "services": {

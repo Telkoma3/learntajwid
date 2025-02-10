@@ -39,7 +39,7 @@ class ArticleDetails extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: Colors.yellow,
                               borderRadius: BorderRadius.circular(30)),
                           child: Text(
                             blog['category'],

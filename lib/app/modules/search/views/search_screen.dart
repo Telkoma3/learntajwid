@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Search Here"),
+        title: const Text("Search Ustadz"),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -20,14 +20,14 @@ class SearchScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Search Your",
+                "Search Ustadz",
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
                     .copyWith(fontWeight: FontWeight.normal),
               ),
               Text(
-                "Specialist",
+                "Capable",
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!

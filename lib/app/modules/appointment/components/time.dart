@@ -11,7 +11,7 @@ class TimeWidget extends StatelessWidget {
 
   TimeWidget({super.key, required this.availableTimes});
 
-  final controller = Get.put(AppointmentController());
+  final controller = Get.find<AppointmentController>();
 
   String formatTime(Timestamp time) {
     DateTime dateTime = time.toDate();
@@ -28,47 +28,26 @@ class TimeWidget extends StatelessWidget {
             style: TextStyle(
                 color: textColor, fontSize: 14, fontWeight: FontWeight.bold)),
         const SizedBox(height: 10),
-        ListView.builder(
-          shrinkWrap: true,
-          itemCount: availableTimes.length,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                controller.selectTime(availableTimes[index]);
-              },
-              child: Obx(() => Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.access_time,
-                        color: controller.selectedTime.value ==
-                                availableTimes[index]
-                            ? Colors.blue
-                            : Colors.grey,
-                      ),
-                      title: Text(
-                        formatTime(availableTimes[index]),
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: controller.selectedTime.value ==
-                                  availableTimes[index]
-                              ? Colors.blue
-                              : Colors.black,
-                        ),
-                      ),
-                      trailing: controller.selectedTime.value ==
-                              availableTimes[index]
-                          ? const Icon(Icons.check_circle, color: Colors.blue)
-                          : null,
-                    ),
-                  )),
-            );
-          },
+        Wrap(
+          spacing: 8,
+          children: availableTimes.map((time) {
+            return Obx(() => ChoiceChip(
+                  label: Text(formatTime(time)),
+                  selected: controller.selectedTime.value == time,
+                  onSelected: (selected) {
+                    if (selected) {
+                      controller.selectTime(time);
+                    }
+                  },
+                  selectedColor: Colors.blue,
+                  backgroundColor: Colors.grey.shade200,
+                  labelStyle: TextStyle(
+                    color: controller.selectedTime.value == time
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                ));
+          }).toList(),
         ),
       ],
     );

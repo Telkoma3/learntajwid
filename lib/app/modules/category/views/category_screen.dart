@@ -130,7 +130,7 @@ class CategoryScreen extends StatelessWidget {
                                                         TextOverflow.ellipsis,
                                                     maxLines: 2,
                                                     TextSpan(
-                                                      text: "Clinic/Hospital: ",
+                                                      text: "Institution: ",
                                                       style: const TextStyle(
                                                           fontSize: 12,
                                                           color: textColor,

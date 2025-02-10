@@ -29,7 +29,7 @@ class SearchDoctorCard extends StatelessWidget {
         contentPadding: const EdgeInsets.all(defaultPadding),
         leading: AspectRatio(
           aspectRatio: 0.85,
-          child: Image.asset(
+          child: Image.network(
             info.image!,
             fit: BoxFit.cover,
           ),

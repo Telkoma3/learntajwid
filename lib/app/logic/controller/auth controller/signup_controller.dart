@@ -33,8 +33,7 @@ class SignupController extends GetxController {
         "userName": email.value.replaceAll("@gmail.com", ""),
         "photos": "",
         "address": "",
-        "gender": "",
-        "bloodGroup": "",
+        "gender": ""
       };
       await FirebaseFirestore.instance.collection("users").add(userInfo);
 

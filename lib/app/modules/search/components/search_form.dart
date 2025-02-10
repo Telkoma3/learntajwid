@@ -29,7 +29,7 @@ class SearchForm extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           DropdownMenu(
             width: double.infinity,
-            hintText: "Select Specialist",
+            hintText: "Select Capabilities",
             trailingIcon: SvgPicture.asset("assets/icons/stethoscope.svg"),
             dropdownMenuEntries: doctorSpecialists
                 .map<DropdownMenuEntry<String>>((String specialist) {

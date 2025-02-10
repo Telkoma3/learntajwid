@@ -1,10 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:doctor_appointment/app/logic/controller/appointment%20controller/appointment_controller.dart';
 import 'package:doctor_appointment/app/modules/main/main_screen.dart';
 import 'package:doctor_appointment/widgets/app_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../style/toast_style.dart';
+
 import '../../../../utils/constants.dart';
 import '../../../logic/model/doctor_model.dart';
 import '../../profile/components/profile_text_field.dart';
@@ -13,11 +13,18 @@ import '../components/time.dart';
 
 class AppointmentScreen extends StatelessWidget {
   final DoctorModel doctor;
-  AppointmentScreen({super.key, required this.doctor});
-  final controller = Get.put(AppointmentController());
+  AppointmentScreen({super.key, required this.doctor}){
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1970958431.
+     Get.lazyPut(() => AppointmentController()); // Inisialisasi di sini
+  }
+
+  final controller = Get.find<AppointmentController>(); // 🔥 Gunakan Get.find agar tidak duplikat
 
   @override
   Widget build(BuildContext context) {
+    controller.setDoctorCategory(doctor.category);
+    controller.setZoomLink("Coming soon");
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -30,7 +37,6 @@ class AppointmentScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: ListView(
           children: [
-            /// Doctor info
             Text(
               doctor.name,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
@@ -41,62 +47,41 @@ class AppointmentScreen extends StatelessWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.bold)),
 
-            /// Days...
-            CalendarWidget(
-              availableDays: doctor.days,
-              doctorName: doctor.name,
-            ),
-
-            /// Time...
+            CalendarWidget(availableDays: doctor.days, doctorName: doctor.name),
             TimeWidget(availableTimes: doctor.time),
 
             const SizedBox(height: 20),
 
-            /// Input fields
             ProfileTextField(
-              fieldName: 'Patient Name*',
-              onChanged: (value) {
-                controller.name.value = value;
-              },
+              fieldName: 'Learner Name*',
+              onChanged: (value) => controller.name.value = value,
             ),
             ProfileTextField(
               fieldName: 'Contact Number*',
               keyboardType: TextInputType.number,
-              onChanged: (value) {
-                controller.number.value = value;
-              },
+              onChanged: (value) => controller.number.value = value,
             ),
             ProfileTextField(
-              fieldName: 'Tell us patient problem*',
+              fieldName: 'Tell us your goal Learn Tajwid*',
               maxLine: 5,
-              onChanged: (value) {
-                controller.problem.value = value;
-              },
+              onChanged: (value) => controller.problem.value = value,
             ),
 
-            /// Confirm Button
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 child: const Text("Confirm Appointment"),
                 onPressed: () {
-                  if (controller.selectedDay.value.isNotEmpty &&
-                      controller.selectedTime.value != Timestamp.now() &&
-                      controller.name.value.isNotEmpty &&
-                      controller.number.value.isNotEmpty &&
-                      controller.problem.value.isNotEmpty) {
-                    controller.saveAppointment(doctor.name);
+                  controller.saveAppointment(doctor.name).then((_) {
                     appDialog(
                         context,
                         Image.asset('assets/icons/success.png', height: 40),
-                        "Appointment Cofirm",
+                        "Appointment Confirmed",
                         "Your appointment has been confirmed. You will be contacted very soon.",
                         "Go Home", () {
                       Get.offAll(() => MainScreen());
                     });
-                  } else {
-                    errorToast('Please fill all the fields before confirming.');
-                  }
+                  });
                 },
               ),
             ),

@@ -41,7 +41,7 @@ class MainScreen extends StatelessWidget {
                         horizontal: 15, vertical: 15 / 2),
                     tabs: const [
                       GButton(icon: Icons.home, text: 'Home'),
-                      GButton(icon: Icons.people, text: 'Doctors'),
+                      GButton(icon: Icons.people, text: 'Ustadz'),
                       GButton(icon: Icons.content_paste, text: 'Appointment'),
                       GButton(icon: Icons.person, text: 'Profile')
                     ],

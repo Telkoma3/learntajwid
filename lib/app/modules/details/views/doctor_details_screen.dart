@@ -112,7 +112,7 @@ class DoctorDetailsScreen extends StatelessWidget {
 
               /// About
               Text(
-                "About ${doctor.name}",
+                "About Ustadz ${doctor.name}",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Padding(
@@ -128,7 +128,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Highlight(
-                      name: "Patients",
+                      name: "Leaner",
                       text: doctor.parients,
                     ),
                     Highlight(
